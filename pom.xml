@@ -21,7 +21,9 @@
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <weka.version>3.8.6</weka.version>
         <smile.version>4.3.0</smile.version>
+        <jgap.version>3.4.4</jgap.version>
     </properties>
 
     <dependencies>
@@ -51,11 +53,25 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- SMILE Core -->
+        <!-- Weka - 机器学习库 -->
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-stable</artifactId>
+            <version>${weka.version}</version>
+        </dependency>
+
+        <!-- SMILE - 统计机器学习库 -->
         <dependency>
             <groupId>com.github.haifengl</groupId>
             <artifactId>smile-core</artifactId>
             <version>${smile.version}</version>
+        </dependency>
+
+        <!-- JGap - 遗传算法库 -->
+        <dependency>
+            <groupId>net.sf.jgap</groupId>
+            <artifactId>jgap</artifactId>
+            <version>${jgap.version}</version>
         </dependency>
 
         <!-- Apache Commons Math - 用于数学计算 -->
@@ -103,13 +119,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <!-- 添加必要的Maven仓库 -->
-    <repositories>
-        <!-- ELKI仓库 -->
-        <repository>
-            <id>elki-repo</id>
-            <url>https://mvnrepository.com/artifact/de.lmu.ifi.dbs.elki</url>
-        </repository>
-    </repositories>
 </project> 
